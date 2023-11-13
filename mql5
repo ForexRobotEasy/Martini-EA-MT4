@@ -1,0 +1,165 @@
+
+
+
+
+// Martini EA MT4 Code Structure
+
+
+
+// Include necessary libraries
+
+#include <Trade\Trade.mqh>
+
+#include <Array\ArrayObj.mqh>
+
+
+
+// Define constants
+
+#define SYMBOL_GBPUSD 'GBPUSD'
+
+#define SYMBOL_AUDUSD 'AUDUSD'
+
+#define SYMBOL_EURUSD 'EURUSD'
+
+#define SYMBOL_GBPAUD 'GBPAUD'
+
+#define SYMBOL_EURAUD 'EURAUD'
+
+#define TIMEFRAME M5
+
+
+
+// Define variables
+
+double LotSize = 0.01;
+
+double StopLoss = 20;
+
+double TakeProfit = 40;
+
+
+
+// Define trade management variables
+
+double TrailingStop = 10;
+
+double TrailingStep = 5;
+
+double BreakEven = 10;
+
+
+
+// Define trade entry point variables
+
+datetime EntryTime1 = D'2022.01.01 08:00:00';
+
+datetime EntryTime2 = D'2022.01.01 12:00:00';
+
+datetime EntryTime3 = D'2022.01.01 16:00:00';
+
+
+
+// Define trade entry point functions
+
+void PlacePendingOrder(string symbol, double price, double stopLoss, double takeProfit)
+
+{
+
+    // Place pending order code goes here
+
+    }
+
+
+
+    // Define trade management functions
+
+    void TrailStopLoss()
+
+    {
+
+        // Trail stop loss code goes here
+
+        }
+
+
+
+        void MoveStopLossToBreakEven()
+
+        {
+
+            // Move stop loss to break even code goes here
+
+            }
+
+
+
+            // Define main function
+
+            void OnTick()
+
+            {
+
+                // Check if current symbol is one of the specified currency pairs
+
+                    if (Symbol() == SYMBOL_GBPUSD || Symbol() == SYMBOL_AUDUSD || Symbol() == SYMBOL_EURUSD || Symbol() == SYMBOL_GBPAUD || Symbol() == SYMBOL_EURAUD)
+
+                        {
+
+                                // Check if current timeframe is M5
+
+                                        if (Period() == TIMEFRAME)
+
+                                                {
+
+                                                            // Check if current time is a highly probable entry point
+
+                                                                        if (TimeCurrent() == EntryTime1 || TimeCurrent() == EntryTime2 || TimeCurrent() == EntryTime3)
+
+                                                                                    {
+
+                                                                                                    // Generate entry point based on linked numbers and settings
+                                                                                                    
+                                                                                                                    double entryPrice = // Calculate entry price based on strategy
+                                                                                                                    
+                                                                                                                                    
+                                                                                                                                    
+                                                                                                                                                    // Place pending order at entry price with stop loss and take profit
+                                                                                                                                                    
+                                                                                                                                                                    PlacePendingOrder(Symbol(), entryPrice, StopLoss, TakeProfit);
+                                                                                                                                                                    
+                                                                                                                                                                                }
+                                                                                                                                                                                
+                                                                                                                                                                                        }
+                                                                                                                                                                                        
+                                                                                                                                                                                            }
+                                                                                                                                                                                            
+                                                                                                                                                                                            }
+                                                                                                                                                                                            
+                                                                                                                                                                                            
+                                                                                                                                                                                            
+                                                                                                                                                                                            // Define trade management function
+                                                                                                                                                                                            
+                                                                                                                                                                                            void OnTrade()
+                                                                                                                                                                                            
+                                                                                                                                                                                            {
+                                                                                                                                                                                            
+                                                                                                                                                                                                // Check if trade is opened
+                                                                                                                                                                                                
+                                                                                                                                                                                                    if (OrderSelect() == true && OrderType() == OP_BUY || OrderType() == OP_SELL)
+                                                                                                                                                                                                    
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                        
+                                                                                                                                                                                                                // Manage trade based on trade management system
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                        TrailStopLoss();
+                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                MoveStopLossToBreakEven();
+                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    
